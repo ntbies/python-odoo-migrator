@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "python-odoo-migrator"
+version = "1.0.0"
+description = "Library and CLI toolkit allowing data migration between Odoo instances (JSON-RPC / JSON-2)"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICEN[CS]E.*"]
+
+requires-python = ">=3.8"
+authors = [
+    { name = "Gerry Ntabuhashe", email = "oss@ntbies.com" },
+]
+
+maintainers = [
+    { name = "NTBIES Open-Source Squad", email = "oss@ntbies.com" },
+]
+keywords = ["odoo", "migration", "jsonrpc", "json2", "etl", "cli"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Environment :: Console",
+    "Topic :: System :: Systems Administration",
+    "Topic :: Utilities",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/ntbies/python-odoo-migrator"
+Repository = "https://github.com/ntbies/python-odoo-migrator.git"
+Issues = "https://github.com/ntbies/python-odoo-migrator/issues"
+
+
+[project.scripts]
+odoo-migrator = "main:main"
+
+[tool.setuptools]
+include-package-data = true
+py-modules = ["main"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["migrators", "rpc", "utils", "odoo_migrator"]
+
